@@ -122,6 +122,8 @@ section{
 .home-img img{
     width: 35vw;
     animation: floatImage 4s ease-in-out infinite;
+    border-radius: 2rem;
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.5);
 }
 
 @keyframes floatImage{
@@ -233,6 +235,8 @@ span{
 
 .about-img img{
     width: 35vw;
+    border-radius: 2rem;
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.5);
 }
 
 .heading{
@@ -254,6 +258,277 @@ span{
     margin: 2rem 0 3rem;
     line-height: 1.8;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Journey Timeline Styles */
+.journey {
+    background: var(--bg-color);
+    padding: 10rem 9% 2rem;
+}
+
+.journey .heading {
+    margin-bottom: 5rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--main-color), var(--yellow-accent));
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 30px);
+    position: relative;
+    margin: 4rem 0;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: calc(50% + 30px);
+    padding-right: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--yellow-accent);
+    border: 4px solid var(--bg-color);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 20px var(--yellow-accent), 0 0 40px var(--main-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 20px var(--yellow-accent), 0 0 40px var(--main-color);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2);
+        box-shadow: 0 0 30px var(--yellow-accent), 0 0 60px var(--main-color);
+    }
+}
+
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.timeline-content {
+    background: var(--second-bg-color);
+    padding: 2.5rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    position: relative;
+    width: 45%;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+    background: linear-gradient(135deg, rgba(0, 238, 255, 0.3), rgba(255, 215, 0, 0.3));
+    border-radius: 2rem;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent var(--second-bg-color);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent var(--second-bg-color) transparent transparent;
+}
+
+.timeline-content:hover {
+    border-color: var(--main-color);
+    box-shadow: 0 0 20px var(--main-color), 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.timeline-content:hover::after {
+    opacity: 1;
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, rgba(0, 238, 255, 0.5), rgba(255, 215, 0, 0.5));
+}
+
+.timeline-content h3 {
+    font-size: 2.2rem;
+    color: var(--yellow-accent);
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Skills Section Styles */
+.skills-section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.skills-section .heading {
+    margin-bottom: 5rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background: var(--second-bg-color);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category:hover {
+    border-color: var(--main-color);
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    font-size: 2.4rem;
+    color: var(--yellow-accent);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-category h3 i {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.skill-info span:first-child {
+    color: var(--text-color);
+}
+
+.skill-info span:last-child {
+    color: var(--yellow-accent);
+    font-weight: 600;
+}
+
+.skill-progress {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.progress-line {
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-color), var(--yellow-accent));
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: width 1.5s ease-in-out;
+    animation: shimmer 2s infinite;
+}
+
+.progress-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background: var(--yellow-accent);
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 10px var(--yellow-accent);
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--main-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--main-color), 0 0 30px var(--yellow-accent);
+    }
 }
 
 .services h2{
@@ -458,43 +733,110 @@ span{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.input-field,
+.input-field-full {
+    position: relative;
+    flex: 1;
+    min-width: calc(50% - 1rem);
+}
+
+.input-field-full {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.input-field i,
+.input-field-full i {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--main-color);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-field-full i {
+    top: 2rem;
+    transform: none;
 }
 
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.8rem 5rem 1.8rem 2rem;
     font-size: 1.6rem;
     color: var(--text-color);
     background: var(--second-bg-color);
-    border-radius: .8rem;
-    margin: .7rem 0;
+    border-radius: 1.5rem;
+    border: 2px solid transparent;
     box-shadow: 
         inset 0 2px 5px rgba(0, 0, 0, 0.2),
-        0 1px 0 rgba(255, 255, 255, 0.05);
+        0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact form textarea {
+    padding: 1.8rem 5rem 1.8rem 2rem;
+}
+
+.contact form .input-box input:hover,
+.contact form textarea:hover {
+    border-color: var(--main-color);
+    box-shadow: 
+        inset 0 2px 5px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(0, 238, 255, 0.3);
 }
 
 .contact form .input-box input:focus,
 .contact form textarea:focus {
     outline: none;
+    border: 2px solid var(--main-color);
+    background: rgba(50, 57, 70, 0.9);
     box-shadow: 
         inset 0 2px 5px rgba(0, 0, 0, 0.2),
-        0 0 0 2px var(--yellow-accent),
-        0 4px 10px rgba(255, 215, 0, 0.3);
+        0 0 20px rgba(0, 238, 255, 0.5),
+        0 0 30px rgba(255, 215, 0, 0.2);
 }
 
-.contact form .input-box input{
-    width: 49%;
-} 
+.contact form .input-box input:focus + i,
+.contact form textarea:focus + i {
+    color: var(--yellow-accent);
+    transform: translateY(-50%) scale(1.2);
+}
+
+.input-field-full textarea:focus + i {
+    transform: scale(1.2);
+}
+
+.contact form .input-box input::placeholder,
+.contact form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.contact form .input-box input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
 
 .contact form textarea {
     resize: none;
+    min-height: 15rem;
 }
 
 .contact form .btn{
     margin-top: 2rem;
     cursor: pointer;
+    padding: 1.2rem 4rem;
+    font-size: 1.7rem;
+    box-shadow: 0 0 15px var(--main-color), 0 0 25px rgba(255, 215, 0, 0.3);
 }
 
 .footer {
@@ -618,6 +960,43 @@ span{
         margin-top: 4rem;
     }
 
+    /* Journey Timeline Responsive */
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-left: 80px;
+        padding-right: 0;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .timeline-date {
+        left: 30px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 80px);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -15px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent var(--second-bg-color) transparent transparent;
+    }
+
+    /* Skills Section Responsive */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
     .services h2{
             margin-bottom: 3rem;
         }
@@ -645,6 +1024,19 @@ span{
 
     .contact form .input-box input{
         width: 100%;
+    }
+
+    .input-field,
+    .input-field-full {
+        min-width: 100%;
+    }
+
+    .skill-category {
+        padding: 2rem;
+    }
+
+    .skills-container {
+        gap: 2rem;
     }
 }
 

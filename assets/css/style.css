@@ -327,11 +327,15 @@ span{
 
 .services-box h3{
     font-size: 2.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .services-box p{
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
+    line-height: 2;
+    letter-spacing: 0.5px;
 }
 
 .portfolio{

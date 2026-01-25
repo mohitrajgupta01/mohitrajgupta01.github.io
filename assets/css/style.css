@@ -340,6 +340,8 @@ span{
 
 .portfolio{
     background: var(--second-bg-color);
+    position: relative;
+    z-index: 1;
 }
 
 .portfolio h2{
@@ -349,8 +351,10 @@ span{
 .portfolio-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
+    align-items: start;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
 }
 
 .portfolio-container .portfolio-box{
@@ -361,10 +365,12 @@ span{
         0 4px 10px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     overflow: hidden;
-    display: flex;
+    display: block;
     transition: all 0.4s ease;
     aspect-ratio: 16/10;
     min-height: 300px;
+    width: 100%;
+}
 }
 
 .portfolio-container .portfolio-box:hover {

@@ -199,6 +199,25 @@ span{
     align-items: center;
     gap: 2rem;
     background: var(--second-bg-color);
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(255, 255, 255, 0.008) 3px,
+            rgba(255, 255, 255, 0.008) 6px
+        );
+    pointer-events: none;
 }
 
 .about-img img{
@@ -222,6 +241,8 @@ span{
 .about-content p{
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .services h2{
@@ -244,12 +265,39 @@ span{
     text-align: center;
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
+    position: relative;
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.services-container .services-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.01) 2px,
+            rgba(255, 255, 255, 0.01) 4px
+        );
+    border-radius: 2rem;
+    pointer-events: none;
 }
 
 .services-container .services-box:hover{
     border-color: var(--main-color);
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 238, 255, 0.2);
+    box-shadow: 
+        0 10px 30px rgba(0, 238, 255, 0.2),
+        0 15px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .services-box i {
@@ -290,7 +338,10 @@ span{
 .portfolio-container .portfolio-box{
     position: relative;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     overflow: hidden;
     display: flex;
     transition: all 0.4s ease;
@@ -298,7 +349,10 @@ span{
 
 .portfolio-container .portfolio-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 238, 255, 0.3);
+    box-shadow: 
+        0 15px 40px rgba(0, 238, 255, 0.3),
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .portfolio-box img{
@@ -383,6 +437,19 @@ span{
     background: var(--second-bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
+    box-shadow: 
+        inset 0 2px 5px rgba(0, 0, 0, 0.2),
+        0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+    outline: none;
+    box-shadow: 
+        inset 0 2px 5px rgba(0, 0, 0, 0.2),
+        0 0 0 2px var(--main-color),
+        0 4px 10px rgba(0, 238, 255, 0.2);
 }
 
 .contact form .input-box input{

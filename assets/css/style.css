@@ -42,15 +42,18 @@ section{
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: var(--bg-color);
+    background: rgba(31, 36, 45, 0.95);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .header.sticky{
-    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+    border-bottom: .1rem solid rgba(0, 238, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -59,6 +62,11 @@ section{
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--main-color);
 }
 
 .navbar a{
@@ -66,6 +74,23 @@ section{
     color: var(--text-color);
     margin-left: 4rem;
     transition: .3s;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
 }
 
 .navbar a:hover,
@@ -163,10 +188,9 @@ span{
     transition: .5s ease;
 }
 
-
 .btn:hover{
-   
-    box-shadow: none;
+    box-shadow: 0 0 2rem var(--main-color);
+    transform: translateY(-3px);
 }
 
 .about{
@@ -224,14 +248,19 @@ span{
 
 .services-container .services-box:hover{
     border-color: var(--main-color);
-    transform: scale(1.02);
-    border: .2rem solid var(--main-color);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 238, 255, 0.2);
 }
 
 .services-box i {
     font-size: 7rem;
     color: var(--main-color);
-    
+    transition: all 0.3s ease;
+}
+
+.services-box:hover i {
+    filter: drop-shadow(0 0 15px var(--main-color));
+    transform: scale(1.1);
 }
 
 .services-box h3{
@@ -264,6 +293,12 @@ span{
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    transition: all 0.4s ease;
+}
+
+.portfolio-container .portfolio-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 238, 255, 0.3);
 }
 
 .portfolio-box img{

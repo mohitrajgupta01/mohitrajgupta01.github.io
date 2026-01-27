@@ -1,3 +1,18 @@
+/* Loading Animation Control */
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader-wrapper");
+
+  // Remove loader after 4.5 seconds (allowing animation to complete)
+  setTimeout(() => {
+    loader.classList.add("fade-out");
+
+    // Remove from DOM after fade out animation
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1000);
+  }, 4500);
+});
+
 /* toggle icon navbar */
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
@@ -44,29 +59,26 @@ window.onscroll = () => {
 /* scroll to top button */
 
 ScrollReveal({
- // reset: true,
+  // reset: true,
   distance: "80px",
   duration: 2000,
   delay: 200,
 });
 
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
 ScrollReveal().reveal(
-  '.home-img, .services-container, .portfolio-box, .contact form',
-  { origin: 'bottom'}
+  ".home-img, .services-container, .portfolio-box, .contact form",
+  { origin: "bottom" },
 );
-ScrollReveal().reveal('.home-content h1, .about-img',{ origin: 'left' }
-);
+ScrollReveal().reveal(".home-content h1, .about-img", { origin: "left" });
 
-ScrollReveal().reveal('.home-content p, .about-content',{ origin: 'right' }
-);
-
+ScrollReveal().reveal(".home-content p, .about-content", { origin: "right" });
 
 /* typed js */
-const typed = new Typed('.multiple-text', {
-    strings: ['Full Stack Developer', 'Web Designer', 'Freelancer'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true
+const typed = new Typed(".multiple-text", {
+  strings: ["Full Stack Developer", "Web Designer", "Freelancer"],
+  typeSpeed: 100,
+  backSpeed: 100,
+  backDelay: 1000,
+  loop: true,
 });

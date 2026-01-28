@@ -19,53 +19,12 @@
   </head>
 
   <body>
-    <!-- Loading Animation -->
-    <div class="loader-wrapper">
-      <div class="caution-tape tape-1">
-        <div class="tape-content">CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER •</div>
-      </div>
-      <div class="caution-tape tape-2">
-        <div class="tape-content">CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER •</div>
-      </div>
-      <div class="caution-tape tape-3">
-        <div class="tape-content">CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER •</div>
-      </div>
-      <div class="caution-tape tape-4">
-        <div class="tape-content">CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER • CAUTION • DANGER • DO NOT ENTER •</div>
-      </div>
-      
-      <!-- Danger Warning Sign -->
-      <div class="danger-sign">
-        <div class="sign-triangle">
-          <svg class="skull-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <!-- Skull -->
-            <ellipse cx="50" cy="40" rx="18" ry="20" fill="white"/>
-            <rect x="32" y="35" width="36" height="15" fill="white"/>
-            <!-- Eyes -->
-            <ellipse cx="42" cy="38" rx="4" ry="6" fill="#e31e24"/>
-            <ellipse cx="58" cy="38" rx="4" ry="6" fill="#e31e24"/>
-            <!-- Nose -->
-            <path d="M 48 45 L 50 50 L 52 45 Z" fill="#e31e24"/>
-            <!-- Teeth -->
-            <rect x="42" y="48" width="3" height="4" fill="#e31e24"/>
-            <rect x="46" y="48" width="3" height="4" fill="#e31e24"/>
-            <rect x="51" y="48" width="3" height="4" fill="#e31e24"/>
-            <rect x="55" y="48" width="3" height="4" fill="#e31e24"/>
-            <!-- Crossbones -->
-            <g transform="rotate(-30 35 60)">
-              <rect x="25" y="58" width="20" height="4" rx="2" fill="white"/>
-              <ellipse cx="27" cy="60" rx="3" ry="2.5" fill="white"/>
-              <ellipse cx="43" cy="60" rx="3" ry="2.5" fill="white"/>
-            </g>
-            <g transform="rotate(30 65 60)">
-              <rect x="55" y="58" width="20" height="4" rx="2" fill="white"/>
-              <ellipse cx="57" cy="60" rx="3" ry="2.5" fill="white"/>
-              <ellipse cx="73" cy="60" rx="3" ry="2.5" fill="white"/>
-            </g>
-          </svg>
-          <div class="danger-label">DANGER</div>
-        </div>
-      </div>
+    <!-- Custom Radar Cursor -->
+    <div class="custom-cursor">
+      <div class="cursor-radar-ring ring-1"></div>
+      <div class="cursor-radar-ring ring-2"></div>
+      <div class="cursor-radar-ring ring-3"></div>
+      <div class="cursor-dot"></div>
     </div>
 
     <!-- header design -->
@@ -273,128 +232,109 @@
       <h2 class="heading">Technical <span>Skills</span></h2>
 
       <div class="skills-container">
-        <div class="skill-category">
-          <h3><i class="bx bx-code-alt"></i> Programming Languages</h3>
-          <div class="skill-bars">
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>JavaScript</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 90%"></div>
-              </div>
+        <!-- Languages -->
+        <div class="skill-category-card">
+          <h3 class="category-title">LANGUAGES</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bx-code-curly'></i>
+              <span>C</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>HTML & CSS</span>
-                <span>95%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 95%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bx-code-alt'></i>
+              <span>C++</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Core Java</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bxl-javascript'></i>
+              <span>JavaScript</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>C / C++</span>
-                <span>95%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 95%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bxl-html5'></i>
+              <span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-css3'></i>
+              <span>CSS</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-java'></i>
+              <span>Core Java</span>
             </div>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3><i class="bx bxl-react"></i> Frameworks & Libraries</h3>
-          <div class="skill-bars">
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>React.js</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+        <!-- Frameworks -->
+        <div class="skill-category-card">
+          <h3 class="category-title">FRAMEWORKS</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bx-server'></i>
+              <span>Express.js</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Node.js & Express.js</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bxl-nodejs'></i>
+              <span>Node.js</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Tailwind CSS</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 90%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bxl-bootstrap'></i>
+              <span>Bootstrap</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Bootstrap & Material-UI</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bxl-tailwind-css'></i>
+              <span>Tailwind CSS</span>
             </div>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3><i class="bx bxs-data"></i> Databases & Tools</h3>
-          <div class="skill-bars">
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>MongoDB</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+        <!-- Library -->
+        <div class="skill-category-card">
+          <h3 class="category-title">LIBRARY</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bxl-react'></i>
+              <span>React.js</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>SQL</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bx-palette'></i>
+              <span>Material-UI</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Git & GitHub</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 90%"></div>
-              </div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category-card">
+          <h3 class="category-title">DATABASE</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bxl-mongodb'></i>
+              <span>MongoDB</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Supabase & Neon</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-line" style="width: 85%"></div>
-              </div>
+            <div class="skill-item">
+              <i class='bx bx-data'></i>
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxs-data'></i>
+              <span>Supabase</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bx-database'></i>
+              <span>Neon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category-card">
+          <h3 class="category-title">TOOLS</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bxl-git'></i>
+              <span>GIT</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-github'></i>
+              <span>GitHub</span>
             </div>
           </div>
         </div>

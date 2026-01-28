@@ -1,17 +1,59 @@
-/* Loading Animation Control */
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader-wrapper");
+/* Custom Radar Cursor with Smooth Lerp */
+(function initCustomCursor() {
+  const cursor = document.querySelector(".custom-cursor");
 
-  // Remove loader after 4.5 seconds (allowing animation to complete)
-  setTimeout(() => {
-    loader.classList.add("fade-out");
+  if (!cursor) return;
 
-    // Remove from DOM after fade out animation
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 1000);
-  }, 4500);
-});
+  // Check if device supports hover (not touch device)
+  const isTouchDevice = window.matchMedia(
+    "(hover: none) and (pointer: coarse)",
+  ).matches;
+
+  if (isTouchDevice) {
+    cursor.style.display = "none";
+    return;
+  }
+
+  // Cursor position state
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+
+  // Lerp (linear interpolation) factor for smooth movement
+  const lerpFactor = 0.15;
+
+  // Track mouse position
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Smooth cursor movement using requestAnimationFrame
+  function updateCursor() {
+    // Calculate lerped position
+    cursorX += (mouseX - cursorX) * lerpFactor;
+    cursorY += (mouseY - cursorY) * lerpFactor;
+
+    // Apply position with GPU acceleration
+    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+
+    requestAnimationFrame(updateCursor);
+  }
+
+  // Start animation loop
+  updateCursor();
+
+  // Hide cursor when leaving window
+  document.addEventListener("mouseleave", () => {
+    cursor.style.opacity = "0";
+  });
+
+  // Show cursor when entering window
+  document.addEventListener("mouseenter", () => {
+    cursor.style.opacity = "1";
+  });
+})();
 
 /* toggle icon navbar */
 let menuIcon = document.querySelector("#menu-icon");

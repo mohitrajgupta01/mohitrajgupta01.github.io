@@ -19,6 +19,11 @@
   </head>
 
   <body>
+    <!-- Constellation canvas -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Film grain -->
+    <div class="noise-overlay"></div>
+
     <!-- Custom Radar Cursor -->
     <div class="custom-cursor">
       <div class="cursor-radar-ring ring-1"></div>
@@ -49,14 +54,20 @@
 
     <!-- home section design -->
     <section class="home" id="home">
+      <!-- HUD corner decorators -->
+      <div class="hud-corner tl"></div>
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner bl"></div>
+      <div class="hud-corner br"></div>
+      <!-- Ambient orbs -->
+      <div class="orb-1"></div>
+      <div class="orb-2"></div>
+
       <div class="home-content">
-        <h3>Hi, It's Me</h3>
-        <h1>Mohit Raj Gupta</h1>
+        <div class="status-badge"><span class="pulse-dot"></span>Available for Work</div>
+        <div class="label">Hi, It's Me</div>
+        <h1 data-text="Mohit Raj Gupta">Mohit Raj Gupta</h1>
         <h3>And I'm a <span class="multiple-text"></span></h3>
-        <!-- <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          voluptatum.
-        </p> -->
         <div class="social-media">
           <a href="https://www.linkedin.com/in/mohit-raj-gupta-617801276/" target="_blank"><i class="bx bxl-linkedin"></i></a>
           <a href="mailto:mohit46306@gmail.com"><i class="bx bx-envelope"></i></a>
@@ -66,7 +77,10 @@
       </div>
 
       <div class="home-img">
-        <img src="/assets/images/home.png" alt="" />
+        <div class="img-frame">
+          <img src="/assets/images/home.png" alt="Mohit Raj Gupta" />
+          <div class="scan-line"></div>
+        </div>
       </div>
     </section>
 
@@ -94,8 +108,8 @@
           continuously learning emerging technologies.
           <br /><br />
           <strong>Location:</strong> Kolkata, West Bengal, India<br />
-          <strong>Email:</strong> <a href="mailto:mohit46306@gmail.com" style="color: #0ef;">mohit46306@gmail.com</a><br />
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohit-raj-gupta-617801276/" target="_blank" style="color: #0ef;">Mohit Raj Gupta</a>
+          <strong>Email:</strong> <a href="mailto:mohit46306@gmail.com" style="color: var(--accent);">mohit46306@gmail.com</a><br />
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohit-raj-gupta-617801276/" target="_blank" style="color: var(--accent);">Mohit Raj Gupta</a>
         </p>
         <a href="#contact" class="btn">Get In Touch</a>
       </div>
@@ -228,7 +242,7 @@
     </section>
 
     <!-- skills section design -->
-    <section class="skills-section" id="skills" style="background: var(--bg-color);">
+    <section class="skills-section" id="skills">
       <h2 class="heading">Technical <span>Skills</span></h2>
 
       <div class="skills-container">
@@ -382,7 +396,7 @@
     </section>
 
     <!-- project section design -->
-    <section class="portfolio" id="portfolio" style="background: var(--bg-color);">
+    <section class="portfolio" id="portfolio">
       <h2 class="heading">Featured <span>Projects</span></h2>
 
       <div class="portfolio-container">
@@ -502,7 +516,7 @@
       <div class="footer-text">
         <p>Copyright &copy; 2026 by Mohit Raj Gupta | All Rights Reserved.</p>
         <p style="margin-top: 5px; font-size: 0.9rem;">
-          Email: <a href="mailto:mohit46306@gmail.com" style="color: #0ef;">mohit46306@gmail.com</a> | 
+          Email: <a href="mailto:mohit46306@gmail.com" style="color: var(--accent);">mohit46306@gmail.com</a> | 
           Location: Kolkata, West Bengal, India
         </p>
       </div>

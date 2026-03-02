@@ -1,126 +1,177 @@
-/* Custom Radar Cursor with Smooth Lerp */
-(function initCustomCursor() {
+﻿/* ==========================================================
+   PORTFOLIO — Futuristic Edition — JS
+   ========================================================== */
+
+/*  1. CONSTELLATION CANVAS BACKGROUND  */
+(function initCanvas() {
+  const canvas = document.getElementById("bg-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  let W, H, particles = [];
+  let mouseX = -9999, mouseY = -9999;
+  const COUNT = 130, LINK_DIST = 140, PULL_DIST = 110;
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  class Particle {
+    reset() {
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.22;
+      this.vy = (Math.random() - 0.5) * 0.22;
+      this.r  = Math.random() * 1.4 + 0.4;
+      this.a  = Math.random() * 0.45 + 0.15;
+    }
+    constructor() { this.reset(); }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > W) this.vx *= -1;
+      if (this.y < 0 || this.y > H) this.vy *= -1;
+      const dx = mouseX - this.x, dy = mouseY - this.y;
+      const d  = Math.hypot(dx, dy);
+      if (d < PULL_DIST) { this.x += dx * 0.005; this.y += dy * 0.005; }
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,240,255,${this.a})`;
+      ctx.fill();
+    }
+  }
+
+  function init() { particles = Array.from({ length: COUNT }, () => new Particle()); }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d  = Math.hypot(dx, dy);
+        if (d < LINK_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(0,240,255,${(1 - d / LINK_DIST) * 0.14})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener("resize", () => { resize(); init(); });
+  document.addEventListener("mousemove", e => { mouseX = e.clientX; mouseY = e.clientY; });
+  resize(); init(); loop();
+})();
+
+/*  2. CUSTOM RADAR CURSOR  */
+(function initCursor() {
   const cursor = document.querySelector(".custom-cursor");
-
   if (!cursor) return;
+  const isTouch = window.matchMedia("(hover:none) and (pointer:coarse)").matches;
+  if (isTouch) { cursor.style.display = "none"; return; }
 
-  // Check if device supports hover (not touch device)
-  const isTouchDevice = window.matchMedia(
-    "(hover: none) and (pointer: coarse)",
-  ).matches;
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  document.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; });
 
-  if (isTouchDevice) {
-    cursor.style.display = "none";
-    return;
-  }
+  (function loop() {
+    cx += (mx - cx) * 0.12;
+    cy += (my - cy) * 0.12;
+    cursor.style.transform = `translate3d(${cx}px,${cy}px,0)`;
+    requestAnimationFrame(loop);
+  })();
 
-  // Cursor position state
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
+  document.addEventListener("mouseleave", () => { cursor.style.opacity = "0"; });
+  document.addEventListener("mouseenter", () => { cursor.style.opacity = "1"; });
+})();
 
-  // Lerp (linear interpolation) factor for smooth movement
-  const lerpFactor = 0.15;
-
-  // Track mouse position
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Smooth cursor movement using requestAnimationFrame
-  function updateCursor() {
-    // Calculate lerped position
-    cursorX += (mouseX - cursorX) * lerpFactor;
-    cursorY += (mouseY - cursorY) * lerpFactor;
-
-    // Apply position with GPU acceleration
-    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-
-    requestAnimationFrame(updateCursor);
-  }
-
-  // Start animation loop
-  updateCursor();
-
-  // Hide cursor when leaving window
-  document.addEventListener("mouseleave", () => {
-    cursor.style.opacity = "0";
-  });
-
-  // Show cursor when entering window
-  document.addEventListener("mouseenter", () => {
-    cursor.style.opacity = "1";
+/*  3. 3-D TILT CARDS  */
+(function initTilt() {
+  const MAX = 10;
+  document.querySelectorAll(
+    ".services-box, .skill-category-card, .timeline-content, .portfolio-box"
+  ).forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform =
+        `perspective(900px) rotateX(${-y * MAX}deg) rotateY(${x * MAX}deg) translateZ(8px) translateY(-6px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transition = "transform .55s cubic-bezier(.23,1,.32,1)";
+      card.style.transform  = "";
+      setTimeout(() => { card.style.transition = ""; }, 560);
+    });
   });
 })();
 
-/* toggle icon navbar */
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+/*  4. MAGNETIC BUTTONS  */
+(function initMagnetic() {
+  document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("mousemove", e => {
+      const r  = btn.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width  / 2);
+      const dy = e.clientY - (r.top  + r.height / 2);
+      btn.style.transform = `translate(${dx * 0.28}px,${dy * 0.28}px)`;
+    });
+    btn.addEventListener("mouseleave", () => {
+      btn.style.transition = "transform .55s cubic-bezier(.23,1,.32,1)";
+      btn.style.transform  = "";
+      setTimeout(() => { btn.style.transition = ""; }, 560);
+    });
+  });
+})();
 
+/*  5. NAVBAR TOGGLE  */
+const menuIcon = document.querySelector("#menu-icon");
+const navbar   = document.querySelector(".navbar");
 menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
 
-/* scroll selections active link */
+/*  6. SCROLL: STICKY HEADER + ACTIVE NAV  */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("header nav a");
+const header   = document.querySelector("header");
 
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("header nav a");
-
-window.onscroll = () => {
-  sections.forEach((sec) => {
-    let top = window.scrolly;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
-
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach((links) => {
-        links.classList.remove("active");
-        document
-          .querySelector("header nav a[href*=" + id + "]")
-          .classList.add("active");
-      });
+window.addEventListener("scroll", () => {
+  const sy = window.scrollY;
+  sections.forEach(sec => {
+    const id  = sec.getAttribute("id");
+    if (sy >= sec.offsetTop - 160 && sy < sec.offsetTop + sec.offsetHeight - 160) {
+      navLinks.forEach(l => l.classList.remove("active"));
+      const link = document.querySelector(`header nav a[href*=${id}]`);
+      if (link) link.classList.add("active");
     }
   });
-
-  /* sticky navbaar */
-
-  let header = document.querySelector("header");
-
-  header.classList.toggle("sticky", window.scrollY > 100);
-
-  /* remove toggle icon and navbar when click navbar link (scroll)  */
-
+  header.classList.toggle("sticky", sy > 100);
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
-};
-
-/* scroll to top button */
-
-ScrollReveal({
-  // reset: true,
-  distance: "80px",
-  duration: 2000,
-  delay: 200,
 });
 
-ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
-ScrollReveal().reveal(
-  ".home-img, .services-container, .portfolio-box, .contact form",
-  { origin: "bottom" },
-);
-ScrollReveal().reveal(".home-content h1, .about-img", { origin: "left" });
+/*  7. SCROLL REVEAL  */
+ScrollReveal({ distance: "60px", duration: 1800, delay: 150 });
+ScrollReveal().reveal(".home-content, .heading",                                          { origin: "top" });
+ScrollReveal().reveal(".home-img, .services-container, .portfolio-box, .contact form",   { origin: "bottom" });
+ScrollReveal().reveal(".home-content h1, .about-img",                                    { origin: "left" });
+ScrollReveal().reveal(".home-content p, .about-content",                                 { origin: "right" });
+ScrollReveal().reveal(".timeline-item",        { origin: "bottom", interval: 150 });
+ScrollReveal().reveal(".skill-category-card",  { origin: "bottom", interval: 100 });
 
-ScrollReveal().reveal(".home-content p, .about-content", { origin: "right" });
-
-/* typed js */
+/*  8. TYPED.JS  */
 const typed = new Typed(".multiple-text", {
-  strings: ["Full Stack Developer", "Web Designer", "Freelancer"],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
+  strings: ["Full Stack Developer", "MERN Stack Engineer", "Problem Solver"],
+  typeSpeed: 90,
+  backSpeed: 60,
+  backDelay: 1800,
   loop: true,
 });

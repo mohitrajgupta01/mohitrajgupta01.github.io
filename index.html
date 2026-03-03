@@ -1,370 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mohit Raj Gupta — Full Stack Developer & MERN Stack Engineer. Building performant, beautiful web applications." />
-  <title>Mohit Raj Gupta | Full Stack Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Portfolio | Mohit Raj Gupta
+    </title>
 
-  <!-- BoxIcons -->
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
-  <!-- Site Styles -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- ===== CUSTOM CURSOR ===== -->
-  <div class="custom-cursor">
-    <div class="cursor-dot"></div>
-    <div class="cursor-radar-ring ring-1"></div>
-    <div class="cursor-radar-ring ring-2"></div>
-    <div class="cursor-radar-ring ring-3"></div>
-  </div>
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
 
-  <!-- ===== CANVAS BACKGROUND ===== -->
-  <canvas id="bg-canvas"></canvas>
-  <div class="noise-overlay"></div>
+  <body>
+    <!-- Constellation canvas -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Film grain -->
+    <div class="noise-overlay"></div>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <a href="#home" class="logo">MRG.</a>
-    <nav class="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#journey">Journey</a>
-      <a href="#services">Services</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <i class="bx bx-menu" id="menu-icon"></i>
-  </header>
-
-  <!-- ===== HOME ===== -->
-  <section class="home" id="home">
-    <div class="hud-corner tl"></div>
-    <div class="hud-corner tr"></div>
-    <div class="hud-corner bl"></div>
-    <div class="hud-corner br"></div>
-    <div class="orb-1"></div>
-    <div class="orb-2"></div>
-
-    <div class="home-content">
-      <div class="status-badge">
-        <span class="pulse-dot"></span>
-        Available for opportunities
-      </div>
-      <p class="label">Hello, I'm</p>
-      <h1 data-text="Mohit Raj Gupta"><span>Mohit</span> Raj Gupta</h1>
-      <h3>A <span class="multiple-text"></span></h3>
-      <p>I craft high-performance web experiences — from pixel-perfect UIs to
-        scalable back-end APIs — with a passion for clean code and
-        cutting-edge technology.</p>
-
-      <div class="social-media">
-        <a href="https://github.com/mohitrajgupta01" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="bx bxl-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mohitrajgupta01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="bx bxl-linkedin"></i>
-        </a>
-        <a href="https://twitter.com/mohitrajgupta01" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
-          <i class="bx bxl-twitter"></i>
-        </a>
-        <a href="https://instagram.com/mohitrajgupta01" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="bx bxl-instagram"></i>
-        </a>
-      </div>
-
-      <a href="#contact" class="btn">Hire Me</a>
+    <!-- Custom Radar Cursor -->
+    <div class="custom-cursor">
+      <div class="cursor-radar-ring ring-1"></div>
+      <div class="cursor-radar-ring ring-2"></div>
+      <div class="cursor-radar-ring ring-3"></div>
+      <div class="cursor-dot"></div>
     </div>
 
-    <div class="img-frame">
-      <div class="scan-line"></div>
-      <img src="assets/images/home.png" alt="Mohit Raj Gupta" />
-    </div>
-  </section>
+    <!-- header design -->
 
-  <!-- ===== ABOUT ===== -->
-  <section class="about" id="about">
-    <div class="about-img">
-      <img src="assets/images/about.png" alt="About Mohit Raj Gupta" />
-    </div>
-    <div class="about-content">
-      <h2 class="heading">About <span>Me</span></h2>
-      <h3>Full Stack Developer &amp; MERN Stack Engineer</h3>
-      <p>Hi, I'm <strong>Mohit Raj Gupta</strong> — a passionate Full Stack
-        Developer who loves building end-to-end web applications that are
-        both beautiful and robust. I specialise in the
-        <strong>MERN stack</strong> (MongoDB, Express, React, Node.js) and
-        have a strong foundation in data structures, algorithms, and system
-        design.</p>
-      <p>When I'm not coding, I enjoy exploring new technologies, contributing
-        to open-source projects, and sharing knowledge with the community.
-        Let's build something amazing together —
-        <a href="#contact">get in touch</a>!</p>
-      <a href="#contact" class="btn">Let's Talk</a>
-    </div>
-  </section>
+    <header class="header">
+      <a href="#" class="logo">Portfolio</a>
 
-  <!-- ===== JOURNEY ===== -->
-  <section class="journey" id="journey">
-    <h2 class="heading">My <span>Journey</span></h2>
+      <i class="bx bx-menu" id="menu-icon"></i>
 
-    <div class="timeline">
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#journey">Journey</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <span class="timeline-date">2020</span>
-        <div class="timeline-content">
-          <h3>B.Tech — Computer Science &amp; Engineering</h3>
-          <p>Enrolled in my Bachelor's degree in CSE, building solid foundations
-            in programming, data structures, discrete mathematics, and
-            operating systems.</p>
+    <!-- home section design -->
+    <section class="home" id="home">
+      <!-- HUD corner decorators -->
+      <div class="hud-corner tl"></div>
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner bl"></div>
+      <div class="hud-corner br"></div>
+      <!-- Ambient orbs -->
+      <div class="orb-1"></div>
+      <div class="orb-2"></div>
+
+      <div class="home-content">
+        <div class="status-badge"><span class="pulse-dot"></span>Available for Work</div>
+        <div class="label">Hi, It's Me</div>
+        <h1 data-text="Mohit Raj Gupta">Mohit Raj Gupta</h1>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <div class="social-media">
+          <a href="https://www.linkedin.com/in/mohit-raj-gupta-617801276/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="mailto:mohit46306@gmail.com"><i class="bx bx-envelope"></i></a>
+          <a href="https://www.instagram.com/mohitrajgupta01/" target="_blank"><i class="bx bxl-instagram"></i></a>
+        </div>
+        <a href="#" class="btn">Download CV</a>
+      </div>
+
+      <div class="home-img">
+        <div class="img-frame">
+          <img src="/assets/images/home.png" alt="Mohit Raj Gupta" />
+          <div class="scan-line"></div>
         </div>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <span class="timeline-date">2022</span>
-        <div class="timeline-content">
-          <h3>Full Stack Web Development</h3>
-          <p>Dived deep into the MERN stack. Built multiple full-stack projects,
-            mastered React, Node.js, Express, and MongoDB, and started
-            participating in hackathons.</p>
+    <!-- about section design -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="./assets/images/about.png" alt="" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Full Stack Developer & Software Engineer</h3>
+        <p>
+          I am a passionate Full Stack Developer pursuing B.Tech in Information Technology at Techno Main Salt Lake, Kolkata (CGPA: 8.3). 
+          With hands-on experience in MERN stack development and a strong foundation in data structures and algorithms, I specialize in building 
+          scalable web applications and fintech solutions.
+          <br /><br />
+          My technical expertise spans across modern frameworks including React.js, Node.js, Express.js, and databases like MongoDB, SQL, and Supabase. 
+          I've successfully completed an SDE internship at Bluestock Fintech where I improved backend API performance by 20% and enhanced UI responsiveness by 30%.
+          <br /><br />
+          Active and dedicated member of Curbrain, a technical sub-club under Geekonix, where I actively contribute to projects, collaborate with team members, 
+          and assist in the planning and smooth execution of various club events. 
+          
+          I'm passionate about solving real-world problems through technology and 
+          continuously learning emerging technologies.
+          <br /><br />
+          <strong>Location:</strong> Kolkata, West Bengal, India<br />
+          <strong>Email:</strong> <a href="mailto:mohit46306@gmail.com" style="color: var(--accent);">mohit46306@gmail.com</a><br />
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohit-raj-gupta-617801276/" target="_blank" style="color: var(--accent);">Mohit Raj Gupta</a>
+        </p>
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- journey section design -->
+    <section class="journey" id="journey">
+      <h2 class="heading">My <span>Journey</span></h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023</div>
+          <div class="timeline-content">
+            <h3>Class 12 Completed</h3>
+            <p>Completed Higher Secondary education from Ram Bhawan Singh High Secondary School with 77.6% marks, laying the foundation for my technical career.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023</div>
+          <div class="timeline-content">
+            <h3>Started College Journey</h3>
+            <p>Began B.Tech in Information Technology at Techno Main Salt Lake, Kolkata - embarking on my journey to become a software engineer.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3>Full Stack Certification</h3>
+            <p>Completed Full Stack Web Development certification from Apna College, mastering MERN stack technologies and modern web development practices.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3>Volunteer at Smarth</h3>
+            <p>Served as a volunteer at Smarth Club, contributing to technical events and gaining valuable experience in event management and team collaboration.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3>🏆 1st Place - College Dev Contest</h3>
+            <p>Won 1st position in technical development competition organized by Samarth Club, showcasing exceptional problem-solving and coding skills.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3>🥉 3rd Place - Bug Hunt</h3>
+            <p>Secured 3rd position in intercollegiate BugHunt competition, demonstrating strong debugging expertise and analytical thinking capabilities.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h3>Member at Curbrain</h3>
+            <p>Joined as an active member of Curbrain, a technical sub-club under Geekonix. Contributing to projects, collaborating with team members, and assisting in event planning.</p>
+          </div>
+        </div>
+
+        <!-- <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h3>AWS Cloud Practitioner</h3>
+            <p>Completed AWS Cloud Practitioner Preparation course from GeeksforGeeks, expanding knowledge in cloud computing and AWS services.</p>
+          </div>
+        </div> -->
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h3>💼 SDE Intern - Bluestock Fintech</h3>
+            <p>Worked as Software Development Engineer Intern at Bluestock Fintech, where I enhanced backend API performance by 20% and improved UI interaction speed by 30%. Successfully delivered all tasks in agile sprints with 100% on-time delivery.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <span class="timeline-date">2023</span>
-        <div class="timeline-content">
-          <h3>Software Engineering Internship</h3>
-          <p>Contributed to production-level codebases in an Agile environment,
-            shipped features used by thousands of users, and improved existing
-            systems performance by 30 %.</p>
+    <!-- education section design -->
+    <section class="services" id="education">
+      <h2 class="heading">My <span>Education</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bxs-graduation"></i>
+          <h3>B.Tech in Information Technology</h3>
+          <p>
+            <strong>Techno Main Salt Lake</strong><br />
+            Saltlake, Kolkata, India<br />
+            November 2023 - July 2027<br />
+            <strong>CGPA: 8.3</strong> (5th Semester)
+          </p>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-book"></i>
+          <h3>Higher Secondary (10+2)</h3>
+          <p>
+            <strong>Ram Bhawan Singh High Secondary School</strong><br />
+            April 2021 - April 2023<br />
+            <strong>Percentage: 77.6%</strong>
+          </p>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-certification"></i>
+          <h3>Certifications</h3>
+          <p>
+            • Full Stack Web Development - Apna College (2024)<br />
+            <!-- • AWS Cloud Practitioner Preparation - GeeksforGeeks (2025)<br /> -->
+            • Multiple technical workshops and bootcamps
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <span class="timeline-date">2024</span>
-        <div class="timeline-content">
-          <h3>Graduated &amp; Open-Source Contributor</h3>
-          <p>Graduated with honours, became an active open-source contributor,
-            and started building developer tools and libraries adopted by
-            hundreds of developers on GitHub.</p>
+    <!-- skills section design -->
+    <section class="skills-section" id="skills">
+      <h2 class="heading">Technical <span>Skills</span></h2>
+
+      <div class="skills-container">
+        <!-- Languages -->
+        <div class="skill-category-card">
+          <h3 class="category-title">LANGUAGES</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bx-code-curly'></i>
+              <span>C</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bx-code-alt'></i>
+              <span>C++</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-javascript'></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-html5'></i>
+              <span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-css3'></i>
+              <span>CSS</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-java'></i>
+              <span>Core Java</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="skill-category-card">
+          <h3 class="category-title">FRAMEWORKS</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bx-server'></i>
+              <span>Express.js</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-nodejs'></i>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-bootstrap'></i>
+              <span>Bootstrap</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-tailwind-css'></i>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Library -->
+        <div class="skill-category-card">
+          <h3 class="category-title">LIBRARY</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bxl-react'></i>
+              <span>React.js</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bx-palette'></i>
+              <span>Material-UI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category-card">
+          <h3 class="category-title">DATABASE</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bxl-mongodb'></i>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bx-data'></i>
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxs-data'></i>
+              <span>Supabase</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bx-database'></i>
+              <span>Neon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category-card">
+          <h3 class="category-title">TOOLS</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class='bx bxl-git'></i>
+              <span>GIT</span>
+            </div>
+            <div class="skill-item">
+              <i class='bx bxl-github'></i>
+              <span>GitHub</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- experience section design -->
+    <section class="services" id="experience">
+      <h2 class="heading">Professional <span>Experience</span></h2>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="services" id="services">
-    <h2 class="heading">My <span>Services</span></h2>
-    <div class="services-container">
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bxs-briefcase"></i>
+          <h3>SDE Intern - Bluestock Fintech</h3>
+          <p>
+            <strong>July 2025 - August 2025</strong><br />
+            • Enhanced backend API performance by 20%<br />
+            • Improved UI interaction speed by 30%<br />
+            • Worked with React.js, Node.js, MongoDB<br />
+            • 100% on-time delivery in agile sprints
+          </p>
+        </div>
 
-      <div class="services-box">
-        <i class="bx bx-code-alt"></i>
-        <h3>Full Stack Development</h3>
-        <p>End-to-end web application development using the MERN stack —
-          scalable REST APIs, secure back-ends, and dynamic responsive
-          front-ends.</p>
-      </div>
+        <div class="services-box">
+          <i class="bx bxs-group"></i>
+          <h3>Member - Curbrain (Technical Club)</h3>
+          <p>
+            <strong>September 2025 - Present</strong><br />
+            Active and dedicated member of Curbrain, a technical sub-club under Geekonix, where I actively contribute to projects, 
+            collaborate with team members, and assist in the planning and smooth execution of various club events.
+          </p>
+        </div>
 
-      <div class="services-box">
-        <i class="bx bxl-react"></i>
-        <h3>React / Next.js Apps</h3>
-        <p>Fast, SEO-friendly, and accessible React or Next.js applications
-          with modern state management, code splitting, and performance
-          optimisation.</p>
-      </div>
-
-      <div class="services-box">
-        <i class="bx bx-transfer-alt"></i>
-        <h3>REST &amp; GraphQL APIs</h3>
-        <p>Clean, well-documented REST and GraphQL APIs with JWT
-          authentication, rate limiting, thorough testing, and OpenAPI
-          documentation.</p>
-      </div>
-
-      <div class="services-box">
-        <i class="bx bx-mobile-alt"></i>
-        <h3>Responsive UI / UX</h3>
-        <p>Pixel-perfect, cross-browser, mobile-first interfaces with Tailwind
-          CSS, smooth animations, and accessibility compliance (WCAG 2.1).</p>
-      </div>
-
-      <div class="services-box">
-        <i class="bx bxl-docker"></i>
-        <h3>DevOps &amp; Deployment</h3>
-        <p>CI / CD pipelines, Dockerised applications, and cloud deployments on
-          AWS, Vercel, Railway, and GitHub Pages with zero-downtime
-          releases.</p>
-      </div>
-
-      <div class="services-box">
-        <i class="bx bx-brain"></i>
-        <h3>Technical Consulting</h3>
-        <p>Architecture reviews, code audits, and technical mentoring to help
-          teams build better software — faster and more confidently.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section class="skills-section" id="skills">
-    <h2 class="heading">My <span>Skills</span></h2>
-    <div class="skills-container">
-
-      <div class="skill-category-card">
-        <p class="category-title">Frontend</p>
-        <div class="skills-grid">
-          <div class="skill-item"><i class="bx bxl-html5"></i><span>HTML 5</span></div>
-          <div class="skill-item"><i class="bx bxl-css3"></i><span>CSS 3</span></div>
-          <div class="skill-item"><i class="bx bxl-javascript"></i><span>JavaScript</span></div>
-          <div class="skill-item"><i class="bx bxl-react"></i><span>React.js</span></div>
-          <div class="skill-item"><i class="bx bxl-sass"></i><span>Sass / SCSS</span></div>
-          <div class="skill-item"><i class="bx bxs-component"></i><span>Redux</span></div>
+        <div class="services-box">
+          <i class="bx bxs-cog"></i>
+          <h3>Management Role - Geekonix Club</h3>
+          <p>
+            <strong>November 2024</strong><br />
+            • Project management and event coordination<br />
+            • Coordinated logistics for 200+ students<br />
+            • Contributed to club operations and planning
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="skill-category-card">
-        <p class="category-title">Backend</p>
-        <div class="skills-grid">
-          <div class="skill-item"><i class="bx bxl-nodejs"></i><span>Node.js</span></div>
-          <div class="skill-item"><i class="bx bxs-server"></i><span>Express.js</span></div>
-          <div class="skill-item"><i class="bx bxl-mongodb"></i><span>MongoDB</span></div>
-          <div class="skill-item"><i class="bx bx-data"></i><span>PostgreSQL</span></div>
-          <div class="skill-item"><i class="bx bx-transfer-alt"></i><span>REST API</span></div>
-          <div class="skill-item"><i class="bx bx-code-curly"></i><span>GraphQL</span></div>
+    <!-- project section design -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Featured <span>Projects</span></h2>
+
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="./assets/images/projects/portfolio1.png" alt="VedaCure Health Centre" />
+          <div class="portfolio-layer">
+            <h4>VedaCure Health Centre</h4>
+            <p>
+              MERN stack healthcare management system for Ayurvedic treatment centers with automated scheduling and JWT authentication.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="./assets/images/projects/portfolio2.png" alt="AISpark Project" />
+          <div class="portfolio-layer">
+            <h4>AISpark - AI Content Platform</h4>
+            <p>
+              Comprehensive AI platform with Google Gemini 2.0 for text generation, Clipdrop API for images, and freemium model with Clerk authentication.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="./assets/images/projects/portfolio3.png" alt="Video Call App" />
+          <div class="portfolio-layer">
+            <h4>Video Call App</h4>
+            <p>
+              Real-time audio and video communication web app built with ReactJS, featuring room creation/joining and responsive UI.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="skill-category-card">
-        <p class="category-title">Tools &amp; DevOps</p>
-        <div class="skills-grid">
-          <div class="skill-item"><i class="bx bxl-git"></i><span>Git / GitHub</span></div>
-          <div class="skill-item"><i class="bx bxl-docker"></i><span>Docker</span></div>
-          <div class="skill-item"><i class="bx bxs-cloud"></i><span>AWS</span></div>
-          <div class="skill-item"><i class="bx bxl-figma"></i><span>Figma</span></div>
-          <div class="skill-item"><i class="bx bxs-terminal"></i><span>Linux / Bash</span></div>
-          <div class="skill-item"><i class="bx bxl-visual-studio"></i><span>VS Code</span></div>
+    <!-- awards section design -->
+    <section class="services" id="awards">
+      <h2 class="heading">Awards & <span>Achievements</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bxs-trophy"></i>
+          <h3>1st Rank - Technical Development</h3>
+          <p>
+            Secured 1st position in technical development competition organized by Samarth Club. 
+            Demonstrated exceptional problem-solving and coding skills.
+          </p>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-medal"></i>
+          <h3>3rd Position - BugHunt Competition</h3>
+          <p>
+            Achieved 3rd position in intercollegiate BugHunt competition. 
+            Showcased debugging expertise and analytical thinking.
+          </p>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-award"></i>
+          <h3>Professional Certifications</h3>
+          <p>
+            • Full Stack Web Development (Apna College - 2024)<br />
+            <!-- • AWS Cloud Practitioner Preparation (GeeksforGeeks - 2025) -->
+          </p>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
 
-  <!-- ===== PORTFOLIO ===== -->
-  <section class="portfolio" id="portfolio">
-    <h2 class="heading">My <span>Portfolio</span></h2>
-    <div class="portfolio-container">
-
-      <div class="portfolio-box">
-        <img src="assets/images/projects/portfolio1.png" alt="E-Commerce Platform" />
-        <div class="portfolio-layer">
-          <h4>E-Commerce Platform</h4>
-          <p>Full-stack MERN e-commerce app with Stripe payments, admin
-            dashboard, and real-time inventory management.</p>
+      <form action="https://formspree.io/f/mayzrjvl" method="POST">
+        <div class="input-box">
+          <div class="input-field">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <i class='bx bx-user'></i>
+          </div>
+          <div class="input-field">
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              required
+            />
+            <i class='bx bx-envelope'></i>
+          </div>
         </div>
+        <div class="input-box">
+          <div class="input-field">
+            <input type="tel" name="phone" placeholder="Mobile Number" required />
+            <i class='bx bx-phone'></i>
+          </div>
+          <div class="input-field">
+            <input type="text" name="subject" placeholder="Email Subject" required />
+            <i class='bx bx-message-square-dots'></i>
+          </div>
+        </div>
+        <div class="input-field-full">
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <i class='bx bx-message-detail'></i>
+        </div>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
+
+    <!-- footer design -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2026 by Mohit Raj Gupta | All Rights Reserved.</p>
+        <p style="margin-top: 5px; font-size: 0.9rem;">
+          Email: <a href="mailto:mohit46306@gmail.com" style="color: var(--accent);">mohit46306@gmail.com</a> | 
+          Location: Kolkata, West Bengal, India
+        </p>
       </div>
 
-      <div class="portfolio-box">
-        <img src="assets/images/projects/portfolio2.png" alt="Social Media App" />
-        <div class="portfolio-layer">
-          <h4>Social Media App</h4>
-          <p>Real-time social platform with WebSocket chat, activity feeds,
-            notifications, and JWT authentication.</p>
-        </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
       </div>
+    </footer>
 
-      <div class="portfolio-box">
-        <img src="assets/images/projects/portfolio3.png" alt="AI Chat Interface" />
-        <div class="portfolio-layer">
-          <h4>AI Chat Interface</h4>
-          <p>OpenAI-powered conversational UI with streaming responses,
-            multi-model support, and persistent conversation history.</p>
-        </div>
-      </div>
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- get from the link:https://scrollrevealjs.org/guide/hello-world.html -->
 
-      <div class="portfolio-box">
-        <img src="assets/images/projects/portfolio4.jpg" alt="Task Management SaaS" />
-        <div class="portfolio-layer">
-          <h4>Task Management SaaS</h4>
-          <p>Collaborative project management tool with drag-and-drop Kanban
-            boards, team workspaces, and built-in analytics.</p>
-        </div>
-      </div>
+    <!-- typed js -->
+    <!-- <script src="https://cdn.jsdeliver.net/npm/typed.js@2.0.12"></script> -->
+    <!--not working -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- get from the github link:https://github.com/mattboldt/typed.js/  -->
 
-      <div class="portfolio-box">
-        <img src="assets/images/projects/portfolio5.jpg" alt="Blog &amp; CMS" />
-        <div class="portfolio-layer">
-          <h4>Blog &amp; CMS Platform</h4>
-          <p>Headless CMS built with Next.js, MDX support, full SEO
-            optimisation, and a rich drag-and-drop content editor.</p>
-        </div>
-      </div>
-
-      <div class="portfolio-box">
-        <img src="assets/images/projects/portfolio6.jpg" alt="DevOps Dashboard" />
-        <div class="portfolio-layer">
-          <h4>DevOps Dashboard</h4>
-          <p>Cloud monitoring dashboard with live metrics, Docker container
-            stats, log streaming, and Slack alert integrations.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="input-box">
-        <div class="input-field">
-          <input type="text" name="fullname" placeholder="Full Name" required />
-          <i class="bx bx-user"></i>
-        </div>
-        <div class="input-field">
-          <input type="email" name="email" placeholder="Email Address" required />
-          <i class="bx bx-envelope"></i>
-        </div>
-        <div class="input-field">
-          <input type="tel" name="phone" placeholder="Phone Number" />
-          <i class="bx bx-phone"></i>
-        </div>
-        <div class="input-field">
-          <input type="text" name="subject" placeholder="Subject" />
-          <i class="bx bx-purchase-tag-alt"></i>
-        </div>
-      </div>
-      <div class="input-field-full">
-        <textarea name="message" placeholder="Your Message" rows="10" required></textarea>
-        <i class="bx bx-message-detail"></i>
-      </div>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-text">
-      <p>Copyright &copy; 2024 <a href="#home">Mohit Raj Gupta</a>. All Rights Reserved.</p>
-      <p>Crafted with ♥ using HTML, CSS &amp; JavaScript.</p>
-    </div>
-    <div class="footer-iconTop">
-      <a href="#home" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
-    </div>
-  </footer>
-
-  <!-- ===== SCRIPTS ===== -->
-  <script src="https://unpkg.com/scrollreveal@4/dist/scrollreveal.min.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script src="assets/js/script.js"></script>
-
-</body>
+    <!-- custom js -->
+    <script src="/assets/js/script.js"></script>
+  </body>
 </html>
